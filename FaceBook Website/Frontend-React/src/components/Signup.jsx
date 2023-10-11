@@ -1,6 +1,6 @@
 import { useContext, useState } from "react"
 import { authContext } from "../providers/AuthProvider"
-
+import { Link } from "react-router-dom"
 
 const SignUp =()=>{
     const {signup} = useContext(authContext)
@@ -23,6 +23,10 @@ const SignUp =()=>{
     <input type="text" onChange={handleChangeMailId} value={mailId}/>
     <input type="password" onChange={handleChangePassword} value={password} />
     <button onClick={onSignup}>Signup</button>
+    <p>aldready a user?</p>
+        <Link to="/signin">
+            <button>signin</button>
+        </Link>
     </>
 }
 

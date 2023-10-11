@@ -36,7 +36,7 @@ const AuthProvider = ({ children }) => {
         setAuth(res.headers.get("authorization"))
         console.log(auth)
         console.log("signin successful")
-        navigate("/")
+        navigate("/home")
     }
 
     

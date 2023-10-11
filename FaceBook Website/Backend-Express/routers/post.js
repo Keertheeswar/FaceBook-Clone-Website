@@ -118,9 +118,7 @@ postRouter.get("/post", async (req, res) => {
     }
     const posts = await postModel.find()
     res.send(posts)
-
-
-
+    
 })
 
 
