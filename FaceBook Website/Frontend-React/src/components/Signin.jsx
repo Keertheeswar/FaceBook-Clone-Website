@@ -1,6 +1,7 @@
 import { useContext, useState } from "react"
 import { authContext } from "../providers/AuthProvider"
 import { Link } from "react-router-dom"
+import Profile from "./Profile"
 
 const SignIn = () => {
     const { signin } = useContext(authContext)

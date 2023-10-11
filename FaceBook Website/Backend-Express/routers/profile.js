@@ -36,7 +36,20 @@ profileRouter.get("/profile/:id", async (req, res) => {
         ]
     }).exec()
    console.log(user.mailId,friendship.status)
-    res.send("profile viewed")
+    res.send(user.mailId)
+})
+
+profileRouter.get("/profile", async (req, res) => {
+    const token = req.headers.authorization
+    console.log(token)
+    const data = jwt.verify(token, "leo")
+    console.log(data)
+    const userId = data.userId//signin user
+    const user = await userModel.findById(userId)
+    const mailId =user.mailId
+    res.json({
+        "mailId":mailId
+    })
 })
 
 module.exports=profileRouter

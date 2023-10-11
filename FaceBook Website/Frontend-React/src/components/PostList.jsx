@@ -8,7 +8,7 @@ const PostList =()=>{
     return<>
     {
         posts.map(d=>{
-            return <Post title={d.title} imageUrl={d.imageUrl} />
+            return <Post title={d.title} imageUrl={d.imageUrl} key={d.id} />
         })
     }
     </>

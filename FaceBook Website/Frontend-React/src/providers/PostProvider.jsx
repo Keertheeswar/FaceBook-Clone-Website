@@ -37,7 +37,8 @@ const PostProvider = ({ children }) => {
         const newPosts = data.map(d => {
             return {
                 title: d.title,
-                imageUrl: d.imageUrl
+                imageUrl: d.imageUrl,
+                id:d._id
             }
         })
         setPosts(newPosts)
