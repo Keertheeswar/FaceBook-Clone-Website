@@ -74,7 +74,7 @@ friendRouter.get("/friend",async(req,res)=>{
     const data = jwt.verify(token,"leo")
     const users = await userModel.find().exec()
     console.log(users)
-    res.send('all users')
+    res.json(users)
 })
 
 

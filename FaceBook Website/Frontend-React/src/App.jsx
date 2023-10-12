@@ -8,6 +8,8 @@ import { Navigate } from "react-router-dom"
 import Navbar from "./components/Navbar"
 import Profile from "./components/Profile"
 import { ProfileProvider } from "./providers/ProfileProvider"
+import { FriendProvider } from "./providers/FriendProvider"
+import FriendList from "./components/FriendList"
 
 const App = () => {
 
@@ -18,14 +20,17 @@ const App = () => {
       <AuthProvider>
         <PostProvider>
           <ProfileProvider>
-            <Navbar />
-            <Routes>
-              <Route path={"/"} element={<Navigate to="/signin" />} />
-              <Route path={"/home"} element={<Home />} />
-              <Route path={"/profile"} element={<Profile />} />
-              <Route path={"/signup"} element={<SignUp />} />
-              <Route path={"/signin"} element={<SignIn />} />
-            </Routes>
+            <FriendProvider>
+              <Navbar />
+              <Routes>
+                <Route path={"/"} element={<Navigate to="/signin" />} />
+                <Route path={"/home"} element={<Home />} />
+                <Route path={"/friend"} element={<FriendList/>} />
+                <Route path={"/profile"} element={<Profile />} />
+                <Route path={"/signup"} element={<SignUp />} />
+                <Route path={"/signin"} element={<SignIn />} />
+              </Routes>
+            </FriendProvider>
           </ProfileProvider>
         </PostProvider>
       </AuthProvider>

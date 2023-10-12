@@ -4,7 +4,7 @@ const Navbar =()=>{
     return <>
         <div>
             <Link to='/home'>Home</Link>
-            <Link >Friends</Link>
+            <Link to='/friend'>Friends</Link>
             <Link to='profile'>Profile</Link>
             <Link to='/'>Logout</Link>
         </div>
